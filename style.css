@@ -19,8 +19,8 @@ h1{
     font-family: 'League Spartan', arial, helvetica, sans-serif;
     width: 20%; /* You can adjust the width as needed */
     margin: 0 auto; /* Center the h1 horizontally */
-    border-bottom: 10px solid #ccc; /* Adjust the color and thickness as needed */
-   padding-top: 20px;
+    border-bottom: 3px solid #ccc; /* Adjust the color and thickness as needed */
+    padding-top: 20px;
     padding-bottom: 5px; /* Add some spacing between the text and the border */
     border-radius: 20px;
     text-align: center; /* Center the border under the text */
@@ -322,6 +322,7 @@ button[type="submit"]:hover {
 .social-icons {
     margin-top: 20px;
     text-align: center;
+    height: auto;
 }
 
 /* Increase the icon size and remove text decoration */
@@ -348,8 +349,9 @@ p a{
 }
 
 .social_networks{
-    height: 200px;
+    height: auto;
     background-color: white;
+    padding-bottom: 20px;
 }
 .social_networks h1{
     padding-top: 20px;
