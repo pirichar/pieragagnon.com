@@ -73,6 +73,7 @@ h4{
     right: 10px;    /* Add this line to position it to the right */
     top: 10px;      /* Add this line for vertical positioning */
 }
+
 /* Side menu styles */
 .side-menu {
     position: fixed;
@@ -100,13 +101,7 @@ h4{
     display: block;
 }
 
-/* Content area styles */
-.content {
-    padding: 20px;
-    text-align: center;
-}
-
-
+/* hero related stuff */
 .hero {
     width: 100%;
     position: relative;
@@ -166,8 +161,53 @@ button{
     border-radius: 10px;
 }
 
-.altColor {
-	background-color: red;
+
+/* Content area styles */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Default styles for the container */
+.h2-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add spacing between service divs */
+    justify-content: space-between; /* Distribute items evenly along the row */
+}
+
+/* Styles for individual service divs */
+.service {
+    flex-basis: calc(50% - 20px); /* Two services per line with gap */
+    margin-bottom: 20px; /* Add vertical spacing between services */
+    text-align: center; /* Center-align the content within service divs */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+
+/* Styles for h2 elements */
+.service h2 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+/* Styles for associated p elements */
+.service p {
+    margin: 0;
+}
+
+/* Media query for screens smaller than a certain width (adjust max-width as needed) */
+@media (max-width: 768px) {
+    .h2-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .service {
+        flex-basis: 100%; /* Full width for service divs when screen is narrow */
+    }
 }
 
 .second_img{
@@ -190,7 +230,9 @@ button{
     display: inline-block;
 
 }
-
+.contact_form{
+    background-color:rgb(214, 214, 214, 0.2) ;
+}
 /* Footer mail inputs */
 .name_input,
 .email_input,
