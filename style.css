@@ -5,6 +5,57 @@ html{
 	left: 0px;
 	top: 0px;
 }
+/* Sticky header styles */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Side menu styles */
+.side-menu {
+    position: fixed;
+    top: -10;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 10;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 10px 20px;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+/* Content area styles */
+.content {
+    padding: 20px;
+}
+
+/* Menu toggle button styles */
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+}
 
 .hero {
     width: 100%;
@@ -63,11 +114,6 @@ button{
 .header{
 	color: aqua;
 }
-.main_text{
-	color: aqua;
-	background-color: blue;
-}
-
 
 .second_img{
     width: 100%;
