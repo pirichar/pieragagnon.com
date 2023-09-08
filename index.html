@@ -24,7 +24,6 @@
 				<li><a href="./index.html">Français</a></li>
 			</ul>
 		</nav>
-
 		<script src="script.js"></script>
 
 		<div class="hero">
@@ -32,7 +31,7 @@
 			<div class="text-overlay">
 				<div class="hero_h1">Counseling de carrière à distance spécialisé en santé mentale</div>
 				<p class="hero_p">“Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.” Confucius</p>
-				<button>Contactez moi</button>
+				<button><a href="#contact">Contactez moi</a></button>
 			</div>
 		</div>
 
@@ -98,7 +97,7 @@
 		</body>
 			
 	<footer>
-    <div class="contact_form">
+    <div id="contact" class="contact_form">
         <h1>Contact</h1>
         <h4>Envoyez-moi un message !</h4>
         <form>
@@ -108,14 +107,36 @@
             <button type="submit">Envoyer</button>
         </form>
     </div>
+	<div class="social_networks">
 		<h1>Connectez-vous à Piera Gagnon, conseillère d'orientation</h1>
 		<div class="social-icons">
 			<a href="https://www.facebook.com/pieragagnonCO/" target="_blank" class="social-iconF"><i class="fab fa-facebook fa-1.5x"></i></a>
 			<a href="https://www.linkedin.com/in/pieragagnon/" target="_blank" class="social-iconL"><i class="fab fa-linkedin fa-1.5x"></i></a>
 		</div>
+	</div>
+	<div class="deontologie">
 		<h1>Cadre de déontologie</h1>
 		<p>À consulter sur le <a href="https://www.orientation.qc.ca/files/GOQ_D.1169-2018_CO_CodeDeonto_15aout2018-1.pdf">Site de l'Ordre des Conseillers et Conseillères d'orientation du Québec</a></p>
+	</div>
 	
 </footer>
 </html>
 		
+<!-- comment je ferais pour placer ce script dans un fichier a part, ca ne semblait pas fonctionner -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top: targetElement.offsetTop
+                });
+            }
+        });
+    });
+</script>

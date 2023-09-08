@@ -31,7 +31,7 @@
         <div class="text-overlay">
             <div class="hero_h1">Remote Career Counseling Specialized in Mental Health</div>
             <p class="hero_p">"Choose a job you love, and you will never have to work a day in your life." - Confucius</p>
-            <button>Contact Me</button>
+            <button><a href="#contact">Contact me</a></button>
         </div>
     </div>
 
@@ -93,7 +93,7 @@
     </body>
 
 <footer>
-    <div class="contact_form">
+    <div id="contact" class="contact_form">
         <h1>Contact</h1>
         <h4>Send me a message!</h4>
         <form>
@@ -117,3 +117,22 @@
 
 </footer>
 </html>
+
+<!-- comment je ferais pour placer ce script dans un fichier a part, ca ne semblait pas fonctionner -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top: targetElement.offsetTop
+                });
+            }
+        });
+    });
+</script>
