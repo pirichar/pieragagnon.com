@@ -1,9 +1,5 @@
 console.log("The script is working");
 
-// button.addEventListener('click',() => button.classList.toggle('altcolor'));
-// button.addEventListener('click',console.log('clicked on the button'));
-// button.addEventListener('click', () => button.classList.toggle('altColor'));
-
 const menuToggle = document.getElementById('menu-toggle');
 const sideMenu = document.getElementById('side-menu');
 
@@ -13,4 +9,19 @@ menuToggle.addEventListener('click', () => {
     } else {
         sideMenu.style.right = '-250px';
     }
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            window.scrollTo({
+                behavior: 'smooth',
+                top: targetElement.offsetTop
+            });
+        }
+    });
 });
