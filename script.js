@@ -8,13 +8,12 @@ const menuToggle = document.getElementById('menu-toggle');
 const sideMenu = document.getElementById('side-menu');
 
 menuToggle.addEventListener('click', () => {
-    if (sideMenu.style.left === '-250px' || !sideMenu.style.left) {
-        sideMenu.style.left = '0';
+    if (sideMenu.style.right === '-250px' || !sideMenu.style.right) {
+        sideMenu.style.right = '0';
     } else {
-        sideMenu.style.left = '-250px';
+        sideMenu.style.right = '-250px';
     }
 });
-
 
 
 // // JavaScript to change the background color of the sticky header and side menu when scrolling

@@ -5,6 +5,21 @@ html{
 	left: 0px;
 	top: 0px;
 }
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* To prevent horizontal scrollbar */
+}
+
+
+h1{
+    color: rgb(92, 78, 102);
+    text-align: center;
+    font-size : 32px;
+    font-weight: 900;
+    font-family: 'League Spartan', arial, helvetica, sans-serif;
+}
+
 /* Sticky header styles */
 .sticky-header {
     position: sticky;
@@ -18,19 +33,45 @@ html{
     z-index: 1000;
 }
 
+.header{
+	color:white;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    display: inline-block;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-transform : none;
+    letter-spacing: normal;
+
+}
+
+/* Menu toggle button styles */
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    position: fixed; /* Add this line */
+    right: 10px;    /* Add this line to position it to the right */
+    top: 10px;      /* Add this line for vertical positioning */
+}
 /* Side menu styles */
 .side-menu {
     position: fixed;
     top: -10;
-    left: -250px;
+    right: -250px; /* Set the initial position to hide the menu to the right */
     width: 250px;
-    height: 100%;
+    height: 10%;
     background-color: #333;
     color: #fff;
-    transition: left 0.3s ease;
+    transition: right 0.3s ease;
     z-index: 10;
 }
-
 .side-menu ul {
     list-style-type: none;
     padding: 0;
@@ -51,11 +92,6 @@ html{
     padding: 20px;
 }
 
-/* Menu toggle button styles */
-.menu-toggle {
-    cursor: pointer;
-    font-size: 24px;
-}
 
 .hero {
     width: 100%;
@@ -65,8 +101,9 @@ html{
 
 .hero img {
     width: 100%;
-    height: auto;
+    height:min-content;
     display: block;
+    filter: brightness(.5)
 }
 
 /* Style the text overlay */
@@ -78,41 +115,45 @@ html{
     text-align: center;
     color: #fff; /* Text color */
 }
+
 .hero_h1 {
-    font-size: 36px;
+    font-size: 32px !important;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: inherit;
+    letter-spacing: inherit;
 }
 
 .hero_p {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .hero_h1 {
+        font-size: 24px !important; /* Adjust the font size as needed for smaller screens */
+    }
 
-
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* To prevent horizontal scrollbar */
-}
-
-h1{
-	border-style: none;
+    .hero_p {
+        font-size: 16px; /* Adjust the font size as needed for smaller screens */
+    }
 }
 
 button{
-    background-color: #007bff;
+    background-color: rgb(92, 78, 102);
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .altColor {
 	background-color: red;
-}
-
-.header{
-	color: aqua;
 }
 
 .second_img{
@@ -120,4 +161,48 @@ button{
 	height: 150px; 
 	object-fit: cover;
 	object-position: 25% 40%; 
+}
+
+.third_img{
+    width: 100%;
+    height: calc((100vw - 48px)/1);
+	border-radius: 0px;
+    aspect-ratio: 1/1;
+    margin-bottom: 32px;
+    vertical-align: middle;
+    margin-right:auto;
+    margin-left: auto;
+    max-width: 100%;
+    display: inline-block;
+
+}
+
+/* Footer mail inputs */
+.name_input,
+.email_input,
+.message_input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message_input {
+    resize: vertical;
+    height: 150px; /* Adjust the height as needed */
+}
+
+button[type="submit"] {
+    background-color: rgb(92, 78, 102);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #333;
 }
