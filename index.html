@@ -90,7 +90,12 @@
 				<img class="third_img" src="https://img1.wsimg.com/isteam/ip/ef4e753f-351d-4fa8-86f3-fe6b9ed9a38f/341567436_810871610556285_3984192123604179750_.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:400,cg:true">
 			</div>
 		</div>
-		
+
+		<div id="imageModal" class="modal">
+			<span class="close" id="closeModal">&times;</span>
+			<img id="modalImage" class="modal-content" alt="Zoomed Image">
+		</div>
+
 		<script type="text/javascript" src="script.js"></script>
 		
 		</body>
@@ -123,6 +128,7 @@
 		
 <!-- comment je ferais pour placer ce script dans un fichier a part, ca ne semblait pas fonctionner -->
 <script>
+	//for the contact-me button
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -138,4 +144,40 @@
             }
         });
     });
+
+	// Import the second img element
+	const img = document.querySelector('.second_img');
+	const modal = document.getElementById('imageModal');
+	const modalImg = document.getElementById('modalImage');
+
+	// Function to open the modal and display the image
+	function openModal() {
+		modal.style.display = 'block';
+		modalImg.src = img.src;
+	}
+
+	// Function to close the modal
+	function closeModal() {
+		modal.style.display = 'none';
+	}
+
+	// Add an event listener for mouseover
+	img.addEventListener('mouseover', () => {
+		// Add a CSS class to apply the zoom effect
+		img.classList.add('zoomed');
+	});
+
+	// Add an event listener for mouseout
+	img.addEventListener('mouseout', () => {
+		// Remove the CSS class to revert the zoom effect
+		img.classList.remove('zoomed');
+	});
+
+	// Add an event listener for click to open the modal
+	img.addEventListener('click', openModal);
+
+	// Add an event listener for closing the modal
+	modal.addEventListener('click', closeModal);
+
+
 </script>
